@@ -1,0 +1,246 @@
+<body
+    class="m-0 font-sans antialiased font-normal dark:bg-slate-900 text-base leading-default bg-gray-50 text-slate-500">
+
+    <div style="background-image: url('/assets/template/assets/img/shapes/pattern-lines.svg');"
+        class="absolute bg-blue-500 bg-y-50 w-full top-0 bg-pattern min-h-75">
+        <span class="absolute top-0 left-0 w-full h-full bg-blue-500 opacity-60"></span>
+    </div>
+
+    <app-navbar></app-navbar>
+
+    <div class="relative  h-full max-h-screen transition-all duration-200 ease-in-out">
+
+        <div class="w-full p-6 mx-auto w-350">
+            <div class="flex flex-wrap -mx-3">
+                <div class="w-full max-w-full px-3 shrink-0 md:flex-0">
+                    <div
+                        class="relative flex flex-col min-w-0 break-words bg-white border-0 shadow-xl dark:bg-slate-850 dark:shadow-dark-xl rounded-2xl bg-clip-border">
+                        <div class="border-black/12.5 rounded-t-2xl border-b-0 border-solid p-6 pb-0">
+                            <div class="flex items-center justify-center">
+                                <h1 class="dark:text-white/80 mr-4">Complete Profile</h1>
+                            </div>
+                        </div>
+                        <div class="flex-auto p-6">
+                            <form [formGroup]="completeSignupForm" (ngSubmit)="completeSignup()">
+                                <p class="leading-normal uppercase dark:text-white dark:opacity-60 text-sm">client
+                                    Information
+                                </p>
+                                <div class="flex flex-wrap -mx-3">
+                                    <div class="w-full max-w-full px-3 shrink-0 md:w-6/12 md:flex-0">
+                                        <div class="mb-4">
+                                            <label for="firstname"
+                                                class="inline-block mb-2 ml-1 font-bold text-xs text-slate-700 dark:text-white/80">First
+                                                Name</label>
+                                            <input type="text" formControlName="firstname" [ngClass]="
+                                                {
+                                                    'focus:border-blue-500': !(completeSignupForm.controls['firstname'].invalid && completeSignupForm.controls['firstname'].touched),
+                                                    'focus:border-red-500 border-red-500': completeSignupForm.controls['firstname'].invalid && completeSignupForm.controls['firstname'].touched
+                                                }"
+                                                class="placeholder:text-gray-500 text-sm focus:shadow-primary-outline leading-5.6 ease block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding py-2 px-3 font-normal text-gray-700 transition-all focus:bg-white focus:text-gray-700 focus:outline-none focus:transition-shadow"
+                                                placeholder="First Name" aria-label="firstname"
+                                                aria-describedby="email-addon" />
+                                            <div
+                                                *ngIf="completeSignupForm.controls['firstname'].invalid && completeSignupForm.controls['firstname'].touched">
+                                                <p *ngIf="completeSignupForm.controls['firstname'].errors?.['required']"
+                                                    class="text-red-500 text-xs mt-1 ml-1">Please enter your firstname
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="w-full max-w-full px-3 shrink-0 md:w-6/12 md:flex-0">
+                                        <div class="mb-4">
+                                            <label for="lastname"
+                                                class="inline-block mb-2 ml-1 font-bold text-xs text-slate-700 dark:text-white/80">Last
+                                                Name</label>
+                                            <input type="text" formControlName="lastname" [ngClass]="
+                                                    {
+                                                        'focus:border-blue-500': !(completeSignupForm.controls['lastname'].invalid && completeSignupForm.controls['lastname'].touched),
+                                                        'focus:border-red-500 border-red-500': completeSignupForm.controls['lastname'].invalid && completeSignupForm.controls['lastname'].touched
+                                                    }"
+                                                class="placeholder:text-gray-500 text-sm focus:shadow-primary-outline leading-5.6 ease block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding py-2 px-3 font-normal text-gray-700 transition-all focus:bg-white focus:text-gray-700 focus:outline-none focus:transition-shadow"
+                                                placeholder="Last name" aria-label="Lastname"
+                                                aria-describedby="email-addon" />
+                                            <div
+                                                *ngIf="completeSignupForm.controls['lastname'].invalid && completeSignupForm.controls['lastname'].touched">
+                                                <p *ngIf="completeSignupForm.controls['lastname'].errors?.['required']"
+                                                    class="text-red-500 text-xs mt-1 ml-1">Please enter your lastname
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="w-full max-w-full px-3 shrink-0 md:w-6/12 md:flex-0">
+                                        <div class="mb-4">
+                                            <label for="email"
+                                                class="inline-block mb-2 ml-1 font-bold text-xs text-slate-700 dark:text-white/80">Email</label>
+                                            <input type="text" formControlName="email" [ngClass]="
+                                                    {
+                                                        'focus:border-blue-500': !(completeSignupForm.controls['email'].invalid && completeSignupForm.controls['email'].touched),
+                                                        'focus:border-red-500 border-red-500': completeSignupForm.controls['email'].invalid && completeSignupForm.controls['email'].touched
+                                                    }"
+                                                class="placeholder:text-gray-500 text-sm focus:shadow-primary-outline leading-5.6 ease block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding py-2 px-3 font-normal text-gray-700 transition-all focus:bg-white focus:text-gray-700 focus:outline-none focus:transition-shadow"
+                                                placeholder="Email" aria-label="Email" aria-describedby="email-addon" />
+                                            <div
+                                                *ngIf="completeSignupForm.controls['email'].invalid && completeSignupForm.controls['email'].touched">
+                                                <p *ngIf="completeSignupForm.controls['email'].errors?.['required']"
+                                                    class="text-red-500 text-xs mt-1 ml-1">Please enter your email</p>
+                                                <p *ngIf="completeSignupForm.controls['email'].errors?.['email']"
+                                                    class="text-red-500 text-xs mt-1 ml-1">Please enter a valid email
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="w-full max-w-full px-3 shrink-0 md:w-6/12 md:flex-0">
+                                        <!-- <div class="mb-4">
+                                            <label for="phone number"
+                                                class="inline-block mb-2 ml-1 font-bold text-xs text-slate-700 dark:text-white/80">Phone
+                                                Number</label>
+                                            <input type="text" [value]="client.phoneNumber" readonly [disabled]="true"
+                                                class="placeholder:text-gray-500 text-sm focus:shadow-primary-outline leading-5.6 ease block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding py-2 px-3 font-normal text-gray-700 transition-all focus:bg-white focus:text-gray-700 focus:outline-none focus:transition-shadow"
+                                                placeholder="Phone number" aria-label="Phone number"
+                                                aria-describedby="phone-addon" />
+                                        </div> -->
+                                    </div>
+                                </div>
+                                <hr
+                                    class="h-px mx-0 my-4 bg-transparent border-0 opacity-25 bg-gradient-to-r from-transparent via-black/40 to-transparent dark:bg-gradient-to-r dark:from-transparent dark:via-white dark:to-transparent " />
+
+                                <p class="leading-normal uppercase dark:text-white dark:opacity-60 text-sm">Contact
+                                    Information</p>
+
+                                <div class="rounded-lg overflow-hidden border border-gray-200 shadow-inner mb-6"
+                                    style="height: 39rem; position: relative;">
+                                    <div id="map"></div>
+                                </div>
+
+                                <div class="flex flex-wrap -mx-3">
+                                    <div class="w-full max-w-full px-3 shrink-0 md:w-full md:flex-0">
+                                        <div class="mb-4">
+                                            <label for="displayAddress"
+                                                class="inline-block mb-2 ml-1 font-bold text-xs text-slate-700 dark:text-white/80">Address</label>
+                                            <input type="text" formControlName="displayAddress" [ngClass]="
+                                                {
+                                                    'focus:border-blue-500': !(completeSignupForm.controls['displayAddress'].invalid && completeSignupForm.controls['displayAddress'].touched),
+                                                    'focus:border-red-500 border-red-500': completeSignupForm.controls['displayAddress'].invalid && completeSignupForm.controls['displayAddress'].touched
+                                                }"
+                                                class="placeholder:text-gray-500 text-sm focus:shadow-primary-outline leading-5.6 ease block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding py-2 px-3 font-normal text-gray-700 transition-all focus:bg-white focus:text-gray-700 focus:outline-none focus:transition-shadow"
+                                                placeholder="Address" aria-label="displayAddress"
+                                                aria-describedby="address-addon" [readonly]="true" [disabled]="true" />
+                                            <div
+                                                *ngIf="completeSignupForm.controls['displayAddress'].invalid && completeSignupForm.controls['displayAddress'].touched">
+                                                <p *ngIf="completeSignupForm.controls['displayAddress'].errors?.['required']"
+                                                    class="text-red-500 text-xs mt-1 ml-1">Please enter your address</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="w-full max-w-full px-3 shrink-0 md:w-4/12 md:flex-0">
+                                        <div class="mb-4" *ngIf="cityVisible">
+                                            <label for="city"
+                                                class="inline-block mb-2 ml-1 font-bold text-xs text-slate-700 dark:text-white/80">City</label>
+                                            <input type="text" formControlName="city" [ngClass]="
+                                                {
+                                                    'focus:border-blue-500': !(completeSignupForm.controls['city'].invalid && completeSignupForm.controls['city'].touched),
+                                                    'focus:border-red-500 border-red-500': completeSignupForm.controls['city'].invalid && completeSignupForm.controls['city'].touched
+                                                }"
+                                                class="placeholder:text-gray-500 text-sm focus:shadow-primary-outline leading-5.6 ease block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding py-2 px-3 font-normal text-gray-700 transition-all focus:bg-white focus:text-gray-700 focus:outline-none focus:transition-shadow"
+                                                placeholder="City" aria-label="city" aria-describedby="city-addon"
+                                                [readonly]="true" [disabled]="true" />
+                                            <div
+                                                *ngIf="completeSignupForm.controls['city'].invalid && completeSignupForm.controls['city'].touched">
+                                                <p *ngIf="completeSignupForm.controls['city'].errors?.['required']"
+                                                    class="text-red-500 text-xs mt-1 ml-1">Please enter your city</p>
+                                            </div>
+                                        </div>
+                                        <div class="mb-4" *ngIf="townVisible">
+                                            <label for="town"
+                                                class="inline-block mb-2 ml-1 font-bold text-xs text-slate-700 dark:text-white/80">Town</label>
+                                            <input type="text" formControlName="town" [ngClass]="
+                                                {
+                                                    'focus:border-blue-500': !(completeSignupForm.controls['town'].invalid && completeSignupForm.controls['town'].touched),
+                                                    'focus:border-red-500 border-red-500': completeSignupForm.controls['town'].invalid && completeSignupForm.controls['town'].touched
+                                                }"
+                                                class="placeholder:text-gray-500 text-sm focus:shadow-primary-outline leading-5.6 ease block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding py-2 px-3 font-normal text-gray-700 transition-all focus:bg-white focus:text-gray-700 focus:outline-none focus:transition-shadow"
+                                                placeholder="Town" aria-label="town" aria-describedby="town-addon"
+                                                [readonly]="true" [disabled]="true" />
+                                            <div
+                                                *ngIf="completeSignupForm.controls['town'].invalid && completeSignupForm.controls['town'].touched">
+                                                <p *ngIf="completeSignupForm.controls['town'].errors?.['required']"
+                                                    class="text-red-500 text-xs mt-1 ml-1">Please enter your town</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="w-full max-w-full px-3 shrink-0 md:w-4/12 md:flex-0">
+                                        <div class="mb-4">
+                                            <label for="state"
+                                                class="inline-block mb-2 ml-1 font-bold text-xs text-slate-700 dark:text-white/80">State</label>
+                                            <input type="text" formControlName="state" [ngClass]="
+                                                {
+                                                    'focus:border-blue-500': !(completeSignupForm.controls['state'].invalid && completeSignupForm.controls['state'].touched),
+                                                    'focus:border-red-500 border-red-500': completeSignupForm.controls['state'].invalid && completeSignupForm.controls['state'].touched
+                                                }"
+                                                class="placeholder:text-gray-500 text-sm focus:shadow-primary-outline leading-5.6 ease block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding py-2 px-3 font-normal text-gray-700 transition-all focus:bg-white focus:text-gray-700 focus:outline-none focus:transition-shadow"
+                                                placeholder="State" aria-label="state" aria-describedby="state-addon"
+                                                [readonly]="true" [disabled]="true" />
+                                            <div
+                                                *ngIf="completeSignupForm.controls['state'].invalid && completeSignupForm.controls['state'].touched">
+                                                <p *ngIf="completeSignupForm.controls['state'].errors?.['required']"
+                                                    class="text-red-500 text-xs mt-1 ml-1">Please enter your country</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="w-full max-w-full px-3 shrink-0 md:w-4/12 md:flex-0">
+                                        <div class="mb-4">
+                                            <label for="postalCode"
+                                                class="inline-block mb-2 ml-1 font-bold text-xs text-slate-700 dark:text-white/80">Postal
+                                                code</label>
+                                            <input type="text" formControlName="postalCode" [ngClass]="
+                                                {
+                                                    'focus:border-blue-500': !(completeSignupForm.controls['postalCode'].invalid && completeSignupForm.controls['postalCode'].touched),
+                                                    'focus:border-red-500 border-red-500': completeSignupForm.controls['postalCode'].invalid && completeSignupForm.controls['postalCode'].touched
+                                                }"
+                                                class="placeholder:text-gray-500 text-sm focus:shadow-primary-outline leading-5.6 ease block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding py-2 px-3 font-normal text-gray-700 transition-all focus:bg-white focus:text-gray-700 focus:outline-none focus:transition-shadow"
+                                                placeholder="Postal code" aria-label="postalCode"
+                                                aria-describedby="postalcode-addon" [readonly]="true"
+                                                [disabled]="true" />
+                                            <div
+                                                *ngIf="completeSignupForm.controls['postalCode'].invalid && completeSignupForm.controls['postalCode'].touched">
+                                                <p *ngIf="completeSignupForm.controls['postalCode'].errors?.['required']"
+                                                    class="text-red-500 text-xs mt-1 ml-1">Please enter your postal code
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="flex justify-center w-full">
+                                    <button type="submit"
+                                        class="w-1/5 text-2xl inline-block px-8 py-2 mb-4 mt-4 font-bold leading-normal text-center text-white align-middle transition-all ease-in bg-blue-500 border-0 rounded-lg shadow-md cursor-pointer text-xs tracking-tight-rem hover:shadow-xs hover:-translate-y-px active:opacity-85">
+                                        Submit
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <footer class="pt-4">
+                <div class="w-full px-6 mx-auto">
+                    <div class="flex flex-wrap items-center -mx-3 lg:justify-between">
+                        <div class="w-full max-w-full px-3 mt-0 mb-6 shrink-0 lg:mb-0 lg:w-1/2 lg:flex-none">
+                            <div class="leading-normal text-center text-sm text-slate-500 lg:text-left">
+                                ©
+                                <script>
+                                    document.write(new Date().getFullYear() + ",");
+                                </script>
+                                made with <i class="fa fa-heart"></i> by
+                                <a href="https://www.creative-tim.com"
+                                    class="font-semibold dark:text-white text-slate-700" target="_blank">Creative
+                                    Tim</a>
+                                for a better web.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+</body>

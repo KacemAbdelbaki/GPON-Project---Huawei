@@ -1,0 +1,252 @@
+<app-sidebar></app-sidebar>
+<div style="background-image: url('/assets/template/assets/img/shapes/pattern-lines.svg');"
+    class="absolute bg-blue-500 bg-y-50 w-full top-0 bg-pattern min-h-75">
+    <span class="absolute top-0 left-0 w-full h-full bg-blue-500 opacity-60"></span>
+</div>
+
+<body
+    class="xl:ml-68 m-0 font-sans antialiased font-normal dark:bg-slate-900 text-base leading-default bg-gray-50 text-slate-500">
+
+    <app-navbar></app-navbar>
+
+    <div class="relative h-full max-h-screen transition-all duration-200 ease-in-out">
+
+        <div class="w-full p-6 mx-auto w-350">
+            <div class="flex flex-wrap -mx-3">
+                <div class="w-full max-w-full px-3 shrink-0 md:flex-0">
+                    <div
+                        class="relative flex flex-col min-w-0 break-words bg-white border-0 shadow-xl dark:bg-slate-850 dark:shadow-dark-xl rounded-2xl bg-clip-border">
+                        <div class="border-black/12.5 rounded-t-2xl border-b-0 border-solid p-6 pb-0">
+                            <div class="flex items-center justify-center">
+                                <h1 class="dark:text-white/80 mr-4">Create New ONT</h1>
+                            </div>
+                        </div>
+                        <div class="flex-auto p-6">
+                            <form [formGroup]="ontForm" (ngSubmit)="createONT()">
+                                <p class="leading-normal uppercase dark:text-white dark:opacity-60 text-sm">ONT
+                                    Information
+                                </p>
+                                <div class="flex flex-wrap -mx-3">
+                                    <div class="w-full max-w-full px-3 shrink-0 md:w-6/12 md:flex-0">
+                                        <div class="mb-4">
+                                            <label for="ontModelId"
+                                                class="inline-block mb-2 ml-1 font-bold text-xs text-slate-700 dark:text-white/80">ONT
+                                                Model</label>
+                                            <select formControlName="ontModelId" [ngClass]="
+                                                {
+                                                    'focus:border-blue-500': !(ontForm.controls['ontModelId'].invalid && ontForm.controls['ontModelId'].touched),
+                                                    'focus:border-red-500 border-red-500': ontForm.controls['ontModelId'].invalid && ontForm.controls['ontModelId'].touched
+                                                }"
+                                                class="placeholder:text-gray-500 text-sm focus:shadow-primary-outline leading-5.6 ease block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding py-2 px-3 font-normal text-gray-700 transition-all focus:bg-white focus:text-gray-700 focus:outline-none focus:transition-shadow">
+                                                <option value="">Select ONT Model</option>
+                                                <option *ngFor="let model of ontModels" [value]="model.id">ONT Model #{{
+                                                    model.id }}
+                                                </option>
+                                            </select>
+                                            <div
+                                                *ngIf="ontForm.controls['ontModelId'].invalid && ontForm.controls['ontModelId'].touched">
+                                                <p *ngIf="ontForm.controls['ontModelId'].errors?.['required']"
+                                                    class="text-red-500 text-xs mt-1 ml-1">Please select an ONT model
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="w-full max-w-full px-3 shrink-0 md:w-6/12 md:flex-0">
+                                        <div class="mb-4">
+                                            <label for="name"
+                                                class="inline-block mb-2 ml-1 font-bold text-xs text-slate-700 dark:text-white/80">ONT
+                                                Name</label>
+                                            <input type="text" formControlName="name" [ngClass]="
+                                                {
+                                                    'focus:border-blue-500': !(ontForm.controls['name'].invalid && ontForm.controls['name'].touched),
+                                                    'focus:border-red-500 border-red-500': ontForm.controls['name'].invalid && ontForm.controls['name'].touched
+                                                }"
+                                                class="placeholder:text-gray-500 text-sm focus:shadow-primary-outline leading-5.6 ease block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding py-2 px-3 font-normal text-gray-700 transition-all focus:bg-white focus:text-gray-700 focus:outline-none focus:transition-shadow"
+                                                placeholder="Enter ONT name">
+                                            <div
+                                                *ngIf="ontForm.controls['name'].invalid && ontForm.controls['name'].touched">
+                                                <p *ngIf="ontForm.controls['name'].errors?.['required']"
+                                                    class="text-red-500 text-xs mt-1 ml-1">ONT name is required
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="flex flex-wrap -mx-3">
+                                    <div class="w-full max-w-full px-3 shrink-0 md:w-6/12 md:flex-0">
+                                        <div class="mb-4">
+                                            <label for="serialNumber"
+                                                class="inline-block mb-2 ml-1 font-bold text-xs text-slate-700 dark:text-white/80">Serial
+                                                Number</label>
+                                            <input type="text" formControlName="serialNumber" [ngClass]="
+                                                {
+                                                    'focus:border-blue-500': !(ontForm.controls['serialNumber'].invalid && ontForm.controls['serialNumber'].touched),
+                                                    'focus:border-red-500 border-red-500': ontForm.controls['serialNumber'].invalid && ontForm.controls['serialNumber'].touched
+                                                }"
+                                                class="placeholder:text-gray-500 text-sm focus:shadow-primary-outline leading-5.6 ease block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding py-2 px-3 font-normal text-gray-700 transition-all focus:bg-white focus:text-gray-700 focus:outline-none focus:transition-shadow"
+                                                placeholder="Enter serial number">
+                                            <div
+                                                *ngIf="ontForm.controls['serialNumber'].invalid && ontForm.controls['serialNumber'].touched">
+                                                <p *ngIf="ontForm.controls['serialNumber'].errors?.['required']"
+                                                    class="text-red-500 text-xs mt-1 ml-1">Serial number is required
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="w-full max-w-full px-3 shrink-0 md:w-6/12 md:flex-0">
+                                        <div class="mb-4">
+                                            <label for="status"
+                                                class="inline-block mb-2 ml-1 font-bold text-xs text-slate-700 dark:text-white/80">Status</label>
+                                            <select formControlName="status" [ngClass]="
+                                                    {
+                                                        'focus:border-blue-500': !(ontForm.controls['status'].invalid && ontForm.controls['status'].touched),
+                                                        'focus:border-red-500 border-red-500': ontForm.controls['status'].invalid && ontForm.controls['status'].touched
+                                                    }"
+                                                class="placeholder:text-gray-500 text-sm focus:shadow-primary-outline leading-5.6 ease block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding py-2 px-3 font-normal text-gray-700 transition-all focus:bg-white focus:text-gray-700 focus:outline-none focus:transition-shadow">
+                                                <option value="">Select Status</option>
+                                                <option *ngFor="let status of statuses" [value]="status">{{ status }}
+                                                </option>
+                                            </select>
+                                            <div
+                                                *ngIf="ontForm.controls['status'].invalid && ontForm.controls['status'].touched">
+                                                <p *ngIf="ontForm.controls['status'].errors?.['required']"
+                                                    class="text-red-500 text-xs mt-1 ml-1">Please select a status
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="flex flex-wrap -mx-3">
+                                    <div class="w-full max-w-full px-3 shrink-0 md:w-6/12 md:flex-0">
+                                        <div class="mb-4">
+                                            <label for="boxId"
+                                                class="inline-block mb-2 ml-1 font-bold text-xs text-slate-700 dark:text-white/80">Box</label>
+                                            <select formControlName="boxId" (change)="onBoxSelected()" [ngClass]="
+                                                    {
+                                                        'focus:border-blue-500': !(ontForm.controls['boxId'].invalid && ontForm.controls['boxId'].touched),
+                                                        'focus:border-red-500 border-red-500': ontForm.controls['boxId'].invalid && ontForm.controls['boxId'].touched
+                                                    }"
+                                                class="placeholder:text-gray-500 text-sm focus:shadow-primary-outline leading-5.6 ease block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding py-2 px-3 font-normal text-gray-700 transition-all focus:bg-white focus:text-gray-700 focus:outline-none focus:transition-shadow">
+                                                <option value="">Select Box</option>
+                                                <option *ngFor="let box of boxes" [value]="box.id">{{ box.name }} ({{
+                                                    box.serialNumber }})
+                                                </option>
+                                            </select>
+                                            <div *ngIf="isLoadingBoxes" class="text-blue-500 text-xs mt-1 ml-1">
+                                                Loading boxes...
+                                            </div>
+                                            <div
+                                                *ngIf="ontForm.controls['boxId'].invalid && ontForm.controls['boxId'].touched">
+                                                <p *ngIf="ontForm.controls['boxId'].errors?.['required']"
+                                                    class="text-red-500 text-xs mt-1 ml-1">Please select a box
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="w-full max-w-full px-3 shrink-0 md:w-6/12 md:flex-0">
+                                        <div class="mb-4">
+                                            <label for="port"
+                                                class="inline-block mb-2 ml-1 font-bold text-xs text-slate-700 dark:text-white/80">Box
+                                                Port
+                                                Number</label>
+                                            <select formControlName="port" [ngClass]="
+                                                {
+                                                    'focus:border-blue-500': !(ontForm.controls['port'].invalid && ontForm.controls['port'].touched),
+                                                    'focus:border-red-500 border-red-500': ontForm.controls['port'].invalid && ontForm.controls['port'].touched
+                                                }"
+                                                class="placeholder:text-gray-500 text-sm focus:shadow-primary-outline leading-5.6 ease block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding py-2 px-3 font-normal text-gray-700 transition-all focus:bg-white focus:text-gray-700 focus:outline-none focus:transition-shadow">
+                                                <option value="">Select Port</option>
+                                                <option *ngFor="let port of availablePorts" [value]="port">{{ port }}
+                                                </option>
+                                            </select>
+                                            <div
+                                                *ngIf="ontForm.controls['port'].invalid && ontForm.controls['port'].touched">
+                                                <p *ngIf="ontForm.controls['port'].errors?.['required']"
+                                                    class="text-red-500 text-xs mt-1 ml-1">Box port number is required
+                                                </p>
+                                                <p *ngIf="ontForm.controls['port'].errors?.['min']"
+                                                    class="text-red-500 text-xs mt-1 ml-1">Box port number must be
+                                                    greater
+                                                    than 0
+                                                </p>
+                                            </div>
+                                            <div *ngIf="availablePorts && availablePorts.length === 0"
+                                                class="text-red-500 text-xs mt-1 ml-1">
+                                                No available ports on this box
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="flex flex-wrap -mx-3">
+                                    <div class="w-full max-w-full px-3 shrink-0 md:w-12/12 md:flex-0">
+                                        <div class="mb-4">
+                                            <label for="clientId"
+                                                class="inline-block mb-2 ml-1 font-bold text-xs text-slate-700 dark:text-white/80">Client
+                                                (Optional)</label>
+                                            <select formControlName="clientId" [ngClass]="
+                                                    {
+                                                        'focus:border-blue-500': !(ontForm.controls['clientId'].invalid && ontForm.controls['clientId'].touched),
+                                                        'focus:border-red-500 border-red-500': ontForm.controls['clientId'].invalid && ontForm.controls['clientId'].touched
+                                                    }"
+                                                class="placeholder:text-gray-500 text-sm focus:shadow-primary-outline leading-5.6 ease block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding py-2 px-3 font-normal text-gray-700 transition-all focus:bg-white focus:text-gray-700 focus:outline-none focus:transition-shadow">
+                                                <option value="">None</option>
+                                                <option *ngFor="let client of clients" [value]="client.id">{{
+                                                    client.firstName }} {{ client.lastName }}
+                                                </option>
+                                            </select>
+                                            <div *ngIf="isLoadingClients" class="text-blue-500 text-xs mt-1 ml-1">
+                                                Loading clients...
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <p class="leading-normal uppercase dark:text-white dark:opacity-60 text-sm mt-4">
+                                    Location
+                                    Information
+                                </p>
+                                <p class="text-sm text-gray-600 mb-2">Click on the map to select the ONT installation
+                                    location</p>
+
+                                <div class="rounded-lg overflow-hidden border border-gray-200 shadow-inner mb-6"
+                                    style="height: 39rem; position: relative;">
+                                    <div id="map"></div>
+                                </div>
+
+                                <div class="flex justify-center w-full">
+                                    <button type="submit"
+                                        class="w-1/5 text-2xl inline-block px-8 py-2 mb-4 mt-4 font-bold leading-normal text-center text-white align-middle transition-all ease-in bg-blue-500 border-0 rounded-lg shadow-md cursor-pointer text-xs tracking-tight-rem hover:shadow-xs hover:-translate-y-px active:opacity-85">
+                                        Create ONT
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <footer class="pt-4">
+                <div class="w-full px-6 mx-auto">
+                    <div class="flex flex-wrap items-center -mx-3 lg:justify-between">
+                        <div class="w-full max-w-full px-3 mt-0 mb-6 shrink-0 lg:mb-0 lg:w-1/2 lg:flex-none">
+                            <div class="leading-normal text-center text-sm text-slate-500 lg:text-left">
+                                ©
+                                <script>
+                                    document.write(new Date().getFullYear() + ",");
+                                </script>
+                                made with <i class="fa fa-heart"></i> by
+                                <a href="https://www.creative-tim.com"
+                                    class="font-semibold dark:text-white text-slate-700" target="_blank">Creative
+                                    Tim</a>
+                                for a better web.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+</body>

@@ -1,0 +1,522 @@
+{
+  "type": "FeatureCollection",
+  "name": "equipment",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [10.181, 36.806]
+      },
+      "properties": {
+        "id": 1,
+        "type": "OLT",
+        "status": "ACTIVE",
+        "boardSlots": [101, 102, 103, 104]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [10.162, 36.827]
+      },
+      "properties": {
+        "id": 4,
+        "type": "OLT",
+        "status": "ACTIVE",
+        "addressId": 104,
+        "boardSlots": [105, 106]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [10.181, 36.806]
+      },
+      "properties": {
+        "id": 101,
+        "type": "BOARD",
+        "status": "ACTIVE",
+        "oltId": 1,
+        "slotNumber": 1,
+        "connectedSubBoxes": [301, 302, 303]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [10.181, 36.806]
+      },
+      "properties": {
+        "id": 102,
+        "type": "BOARD",
+        "status": "ACTIVE",
+        "oltId": 1,
+        "slotNumber": 2,
+        "connectedSubBoxes": [304, 305]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [10.181, 36.806]
+      },
+      "properties": {
+        "id": 103,
+        "type": "BOARD",
+        "status": "MAINTENANCE",
+        "oltId": 1,
+        "slotNumber": 3,
+        "connectedSubBoxes": []
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [10.181, 36.806]
+      },
+      "properties": {
+        "id": 104,
+        "type": "BOARD",
+        "status": "INACTIVE",
+        "oltId": 1,
+        "slotNumber": 4,
+        "connectedSubBoxes": []
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [10.162, 36.827]
+      },
+      "properties": {
+        "id": 105,
+        "type": "BOARD",
+        "status": "ACTIVE",
+        "oltId": 4,
+        "slotNumber": 1,
+        "connectedSubBoxes": [306, 307]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [10.162, 36.827]
+      },
+      "properties": {
+        "id": 106,
+        "type": "BOARD",
+        "status": "ACTIVE",
+        "oltId": 4,
+        "slotNumber": 2,
+        "connectedSubBoxes": [308, 309]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [10.186, 36.809]
+      },
+      "properties": {
+        "id": 301,
+        "type": "SUB_BOX",
+        "status": "ACTIVE",
+        "addressId": 105,
+        "connectedToBoardId": 101,
+        "connectedToNextBoxId": 311,
+        "ports": [null, null, null, null, null, null, null, null]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [10.189, 36.814]
+      },
+      "properties": {
+        "id": 302,
+        "type": "SUB_BOX",
+        "status": "ACTIVE",
+        "addressId": 106,
+        "connectedToBoardId": 101,
+        "connectedToNextBoxId": 312,
+        "ports": [null, null, null, null, null, null, null, null]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [10.175, 36.812]
+      },
+      "properties": {
+        "id": 303,
+        "type": "SUB_BOX",
+        "status": "ACTIVE",
+        "addressId": 107,
+        "connectedToBoardId": 101,
+        "connectedToNextBoxId": 313,
+        "ports": [null, null, null, null, null, null, null, null]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [10.171, 36.818]
+      },
+      "properties": {
+        "id": 304,
+        "type": "SUB_BOX",
+        "status": "ACTIVE",
+        "addressId": 108,
+        "connectedToBoardId": 102,
+        "connectedToNextBoxId": 310,
+        "ports": [null, null, null, null, null, null, null, null]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [10.177, 36.802]
+      },
+      "properties": {
+        "id": 305,
+        "type": "SUB_BOX",
+        "status": "ACTIVE",
+        "addressId": 109,
+        "connectedToBoardId": 102,
+        "connectedToNextBoxId": 314,
+        "ports": [null, null, null, null, null, null, null, null]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [10.158, 36.822]
+      },
+      "properties": {
+        "id": 306,
+        "type": "SUB_BOX",
+        "status": "ACTIVE",
+        "addressId": 110,
+        "connectedToBoardId": 105,
+        "connectedToNextBoxId": 315,
+        "ports": [null, null, null, null, null, null, null, null]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [10.167, 36.824]
+      },
+      "properties": {
+        "id": 307,
+        "type": "SUB_BOX",
+        "status": "ACTIVE",
+        "addressId": 111,
+        "connectedToBoardId": 105,
+        "connectedToNextBoxId": 316,
+        "ports": [null, null, null, null, null, null, null, null]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [10.164, 36.832]
+      },
+      "properties": {
+        "id": 308,
+        "type": "SUB_BOX",
+        "status": "ACTIVE",
+        "addressId": 112,
+        "connectedToBoardId": 106,
+        "connectedToNextBoxId": 317,
+        "ports": [null, null, null, null, null, null, null, null]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [10.157, 36.831]
+      },
+      "properties": {
+        "id": 309,
+        "type": "SUB_BOX",
+        "status": "ACTIVE",
+        "addressId": 113,
+        "connectedToBoardId": 106,
+        "connectedToNextBoxId": 318,
+        "ports": [null, null, null, null, null, null, null, null]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [10.165, 36.823]
+      },
+      "properties": {
+        "id": 310,
+        "type": "END_BOX",
+        "status": "ACTIVE",
+        "addressId": 114,
+        "connectedToPreviousBoxId": 304,
+        "ports": [11, 5, 6, 7, 8, 9, 10, 2]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [10.174, 36.814]
+      },
+      "properties": {
+        "id": 311,
+        "type": "END_BOX",
+        "status": "ACTIVE",
+        "addressId": 118,
+        "connectedToPreviousBoxId": 301,
+        "ports": [null, null, null, null, null, null, null, null]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [10.178, 36.799]
+      },
+      "properties": {
+        "id": 312,
+        "type": "END_BOX",
+        "status": "ACTIVE",
+        "addressId": 119,
+        "connectedToPreviousBoxId": 302,
+        "ports": [null, null, null, null, null, null, null, null]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [10.156, 36.818]
+      },
+      "properties": {
+        "id": 313,
+        "type": "END_BOX",
+        "status": "ACTIVE",
+        "addressId": 120,
+        "connectedToPreviousBoxId": 303,
+        "ports": [null, null, null, null, null, null, null, null]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [10.169, 36.821]
+      },
+      "properties": {
+        "id": 314,
+        "type": "END_BOX",
+        "status": "ACTIVE",
+        "addressId": 121,
+        "connectedToPreviousBoxId": 305,
+        "ports": [null, null, null, null, null, null, null, null]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [10.166, 36.834]
+      },
+      "properties": {
+        "id": 315,
+        "type": "END_BOX",
+        "status": "ACTIVE",
+        "addressId": 122,
+        "connectedToPreviousBoxId": 306,
+        "ports": [null, null, null, null, null, null, null, null]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [10.155, 36.833]
+      },
+      "properties": {
+        "id": 316,
+        "type": "END_BOX",
+        "status": "ACTIVE",
+        "addressId": 123,
+        "connectedToPreviousBoxId": 307,
+        "ports": [null, null, null, null, null, null, null, null]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [10.164, 36.834]
+      },
+      "properties": {
+        "id": 317,
+        "type": "END_BOX",
+        "status": "ACTIVE",
+        "addressId": 127,
+        "connectedToPreviousBoxId": 308,
+        "ports": [null, null, null, null, null, null, null, null]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [10.157, 36.833]
+      },
+      "properties": {
+        "id": 318,
+        "type": "END_BOX",
+        "status": "ACTIVE",
+        "addressId": 128,
+        "connectedToPreviousBoxId": 309,
+        "ports": [null, null, null, null, null, null, null, null]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [10.183, 36.801]
+      },
+      "properties": {
+        "id": 2,
+        "type": "ONT",
+        "status": "ACTIVE",
+        "addressId": 102,
+        "clientId": 201,
+        "connectedTo": 310
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [10.169, 36.819]
+      },
+      "properties": {
+        "id": 5,
+        "type": "ONT",
+        "status": "ACTIVE",
+        "addressId": 115,
+        "clientId": 202,
+        "connectedTo": 310
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [10.158, 36.821]
+      },
+      "properties": {
+        "id": 6,
+        "type": "ONT",
+        "status": "ACTIVE",
+        "addressId": 116,
+        "clientId": 203,
+        "connectedTo": 310
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [10.164, 36.822]
+      },
+      "properties": {
+        "id": 7,
+        "type": "ONT",
+        "status": "ACTIVE",
+        "addressId": 117,
+        "clientId": 204,
+        "connectedTo": 310
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [10.174, 36.815]
+      },
+      "properties": {
+        "id": 8,
+        "type": "ONT",
+        "status": "ACTIVE",
+        "addressId": 124,
+        "clientId": 205,
+        "connectedTo": 310
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [10.178, 36.798]
+      },
+      "properties": {
+        "id": 9,
+        "type": "ONT",
+        "status": "ACTIVE",
+        "addressId": 125,
+        "clientId": 206,
+        "connectedTo": 310
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [10.155, 36.817]
+      },
+      "properties": {
+        "id": 10,
+        "type": "ONT",
+        "status": "ACTIVE",
+        "addressId": 126,
+        "clientId": 207,
+        "connectedTo": 310
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [10.170, 36.820]
+      },
+      "properties": {
+        "id": 11,
+        "type": "ONT",
+        "status": "ACTIVE",
+        "addressId": 129,
+        "clientId": 208,
+        "connectedTo": 310
+      }
+    }
+  ]
+}

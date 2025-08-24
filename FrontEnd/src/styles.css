@@ -1,0 +1,14 @@
+/* You can add global styles to this file, and also import other style files */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import 'assets/template/assets/css/argon-dashboard-tailwind.css';
+@import 'assets/template/assets/css/nucleo-svg.css';
+@import 'assets/template/assets/css/nucleo-icons.css';
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700');
+
+@import 'swiper/css';
+@import 'swiper/css/navigation';
+@import 'swiper/css/pagination';

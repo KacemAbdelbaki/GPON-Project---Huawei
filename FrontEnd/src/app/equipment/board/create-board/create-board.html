@@ -1,0 +1,195 @@
+<app-sidebar></app-sidebar>
+<div style="background-image: url('/assets/template/assets/img/shapes/pattern-lines.svg');"
+    class="absolute bg-blue-500 bg-y-50 w-full top-0 bg-pattern min-h-75">
+    <span class="absolute top-0 left-0 w-full h-full bg-blue-500 opacity-60"></span>
+</div>
+<body
+    class="xl:ml-68 m-0 font-sans antialiased font-normal dark:bg-slate-900 text-base leading-default bg-gray-50 text-slate-500">
+
+    <app-navbar></app-navbar>
+
+    <div class="relative  h-full max-h-screen transition-all duration-200 ease-in-out">
+
+        <div class="w-full p-6 mx-auto w-350">
+            <div class="flex flex-wrap -mx-3">
+                <div class="w-full max-w-full px-3 shrink-0 md:flex-0">
+                    <div
+                        class="relative flex flex-col min-w-0 break-words bg-white border-0 shadow-xl dark:bg-slate-850 dark:shadow-dark-xl rounded-2xl bg-clip-border">
+                        <div class="border-black/12.5 rounded-t-2xl border-b-0 border-solid p-6 pb-0">
+                            <div class="flex items-center justify-center">
+                                <h1 class="dark:text-white/80 mr-4">Create New Board</h1>
+                            </div>
+                        </div>
+                        <div class="flex-auto p-6">
+                            <form [formGroup]="boardForm" (ngSubmit)="createBoard()">
+                                <p class="leading-normal uppercase dark:text-white dark:opacity-60 text-sm">Board
+                                    Information
+                                </p>
+                                <div class="flex flex-wrap -mx-3">
+                                    <div class="w-full max-w-full px-3 shrink-0 md:w-6/12 md:flex-0">
+                                        <div class="mb-4">
+                                            <label for="boardType"
+                                                class="inline-block mb-2 ml-1 font-bold text-xs text-slate-700 dark:text-white/80">Board
+                                                Type</label>
+                                            <select formControlName="boardType" [ngClass]="
+                                                {
+                                                    'focus:border-blue-500': !(boardForm.controls['boardType'].invalid && boardForm.controls['boardType'].touched),
+                                                    'focus:border-red-500 border-red-500': boardForm.controls['boardType'].invalid && boardForm.controls['boardType'].touched
+                                                }"
+                                                class="placeholder:text-gray-500 text-sm focus:shadow-primary-outline leading-5.6 ease block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding py-2 px-3 font-normal text-gray-700 transition-all focus:bg-white focus:text-gray-700 focus:outline-none focus:transition-shadow">
+                                                <option value="">Select Board Type</option>
+                                                <option *ngFor="let type of boardTypes" [value]="type">{{ type }}
+                                                </option>
+                                            </select>
+                                            <div
+                                                *ngIf="boardForm.controls['boardType'].invalid && boardForm.controls['boardType'].touched">
+                                                <p *ngIf="boardForm.controls['boardType'].errors?.['required']"
+                                                    class="text-red-500 text-xs mt-1 ml-1">Please select a board type
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="w-full max-w-full px-3 shrink-0 md:w-6/12 md:flex-0">
+                                        <div class="mb-4">
+                                            <label for="status"
+                                                class="inline-block mb-2 ml-1 font-bold text-xs text-slate-700 dark:text-white/80">Status</label>
+                                            <select formControlName="status" [ngClass]="
+                                                    {
+                                                        'focus:border-blue-500': !(boardForm.controls['status'].invalid && boardForm.controls['status'].touched),
+                                                        'focus:border-red-500 border-red-500': boardForm.controls['status'].invalid && boardForm.controls['status'].touched
+                                                    }"
+                                                class="placeholder:text-gray-500 text-sm focus:shadow-primary-outline leading-5.6 ease block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding py-2 px-3 font-normal text-gray-700 transition-all focus:bg-white focus:text-gray-700 focus:outline-none focus:transition-shadow">
+                                                <option value="">Select Status</option>
+                                                <option *ngFor="let status of statuses" [value]="status">{{ status }}
+                                                </option>
+                                            </select>
+                                            <div
+                                                *ngIf="boardForm.controls['status'].invalid && boardForm.controls['status'].touched">
+                                                <p *ngIf="boardForm.controls['status'].errors?.['required']"
+                                                    class="text-red-500 text-xs mt-1 ml-1">Please select a status
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="w-full max-w-full px-3 shrink-0 md:w-6/12 md:flex-0">
+                                        <div class="mb-4">
+                                            <label for="slotNumber"
+                                                class="inline-block mb-2 ml-1 font-bold text-xs text-slate-700 dark:text-white/80">Slot
+                                                Number</label>
+                                            <select formControlName="slotNumber" [ngClass]="
+                                                    {
+                                                        'focus:border-blue-500': !(boardForm.controls['slotNumber'].invalid && boardForm.controls['slotNumber'].touched),
+                                                        'focus:border-red-500 border-red-500': boardForm.controls['slotNumber'].invalid && boardForm.controls['slotNumber'].touched
+                                                    }"
+                                                class="placeholder:text-gray-500 text-sm focus:shadow-primary-outline leading-5.6 ease block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding py-2 px-3 font-normal text-gray-700 transition-all focus:bg-white focus:text-gray-700 focus:outline-none focus:transition-shadow">
+                                                <option value="">Select Slot</option>
+                                                <option *ngFor="let slot of availableSlots" [value]="slot">{{ slot }}</option>
+                                            </select>
+                                            <div *ngIf="selectedOLT && availableSlots.length === 0" class="text-amber-500 text-xs mt-1 ml-1">
+                                                No available slots on this OLT. All slots are occupied.
+                                            </div>
+                                            <div
+                                                *ngIf="boardForm.controls['slotNumber'].invalid && boardForm.controls['slotNumber'].touched">
+                                                <p *ngIf="boardForm.controls['slotNumber'].errors?.['required']"
+                                                    class="text-red-500 text-xs mt-1 ml-1">Please select a slot number
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="w-full max-w-full px-3 shrink-0 md:w-6/12 md:flex-0">
+                                        <div class="mb-4">
+                                            <label for="maxPorts"
+                                                class="inline-block mb-2 ml-1 font-bold text-xs text-slate-700 dark:text-white/80">Maximum
+                                                Ports</label>
+                                            <input type="number" formControlName="maxPorts" [ngClass]="
+                                                    {
+                                                        'focus:border-blue-500': !(boardForm.controls['maxPorts'].invalid && boardForm.controls['maxPorts'].touched),
+                                                        'focus:border-red-500 border-red-500': boardForm.controls['maxPorts'].invalid && boardForm.controls['maxPorts'].touched
+                                                    }"
+                                                class="placeholder:text-gray-500 text-sm focus:shadow-primary-outline leading-5.6 ease block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding py-2 px-3 font-normal text-gray-700 transition-all focus:bg-white focus:text-gray-700 focus:outline-none focus:transition-shadow"
+                                                placeholder="Maximum Ports" aria-label="maxPorts" min="1" />
+                                            <div
+                                                *ngIf="boardForm.controls['maxPorts'].invalid && boardForm.controls['maxPorts'].touched">
+                                                <p *ngIf="boardForm.controls['maxPorts'].errors?.['required']"
+                                                    class="text-red-500 text-xs mt-1 ml-1">Please enter the maximum
+                                                    number of ports
+                                                </p>
+                                                <p *ngIf="boardForm.controls['maxPorts'].errors?.['min']"
+                                                    class="text-red-500 text-xs mt-1 ml-1">Maximum ports must be at
+                                                    least 1
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="w-full max-w-full px-3 shrink-0 md:w-full md:flex-0">
+                                        <div class="mb-4">
+                                            <label for="oltId"
+                                                class="inline-block mb-2 ml-1 font-bold text-xs text-slate-700 dark:text-white/80">OLT</label>
+                                            <div *ngIf="isLoading" class="flex items-center mb-2">
+                                                <div
+                                                    class="animate-spin rounded-full h-4 w-4 border-b-2 border-blue-500 mr-2">
+                                                </div>
+                                                <span class="text-xs text-blue-500">Loading OLTs...</span>
+                                            </div>
+                                            <select formControlName="oltId" 
+                                                (change)="onOLTSelected()"
+                                                [ngClass]="
+                                                    {
+                                                        'focus:border-blue-500': !(boardForm.controls['oltId'].invalid && boardForm.controls['oltId'].touched),
+                                                        'focus:border-red-500 border-red-500': boardForm.controls['oltId'].invalid && boardForm.controls['oltId'].touched
+                                                    }"
+                                                class="placeholder:text-gray-500 text-sm focus:shadow-primary-outline leading-5.6 ease block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding py-2 px-3 font-normal text-gray-700 transition-all focus:bg-white focus:text-gray-700 focus:outline-none focus:transition-shadow">
+                                                <option value="">Select OLT</option>
+                                                <option *ngFor="let olt of olts" [value]="olt.id">{{ 'OLT ' + olt.id }}
+                                                </option>
+                                            </select>
+                                            <div *ngIf="olts.length === 0 && !isLoading"
+                                                class="text-amber-500 text-xs mt-1 ml-1">
+                                                No OLTs available. Please create an OLT first.
+                                            </div>
+                                            <div *ngIf="selectedOLT && selectedOLT.slotCapacity" class="text-blue-500 text-xs mt-1 ml-1">
+                                                Selected OLT has {{ selectedOLT.slotCapacity }} total slots.
+                                            </div>
+                                            <div
+                                                *ngIf="boardForm.controls['oltId'].invalid && boardForm.controls['oltId'].touched">
+                                                <p *ngIf="boardForm.controls['oltId'].errors?.['required']"
+                                                    class="text-red-500 text-xs mt-1 ml-1">Please select an OLT
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="flex justify-center w-full">
+                                    <button type="submit"
+                                        class="w-1/5 text-2xl inline-block px-8 py-2 mb-4 mt-4 font-bold leading-normal text-center text-white align-middle transition-all ease-in bg-blue-500 border-0 rounded-lg shadow-md cursor-pointer text-xs tracking-tight-rem hover:shadow-xs hover:-translate-y-px active:opacity-85">
+                                        Create Board
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <footer class="pt-4">
+                <div class="w-full px-6 mx-auto">
+                    <div class="flex flex-wrap items-center -mx-3 lg:justify-between">
+                        <div class="w-full max-w-full px-3 mt-0 mb-6 shrink-0 lg:mb-0 lg:w-1/2 lg:flex-none">
+                            <div class="leading-normal text-center text-sm text-slate-500 lg:text-left">
+                                ©
+                                <script>
+                                    document.write(new Date().getFullYear() + ",");
+                                </script>
+                                made with <i class="fa fa-heart"></i> by
+                                <a href="https://www.creative-tim.com"
+                                    class="font-semibold dark:text-white text-slate-700" target="_blank">Creative
+                                    Tim</a>
+                                for a better web.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+</body>
