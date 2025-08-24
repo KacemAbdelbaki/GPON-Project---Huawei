@@ -1,4 +1,47 @@
-# GPONPRJ
+# GPON Project - Huawei FrontEnd (Angular)
+
+This is the Angular-based front-end for the GPON Project - Huawei. It provides a user interface for interacting with the backend microservices and visualizing data.
+
+## Features
+- User authentication and management
+- Equipment dashboard and management
+- Address and location services
+- Responsive design
+
+## Project Structure
+- `src/app/` - Main application code
+- `src/app/dashboard/` - Dashboard components
+- `src/app/equipment/` - Equipment management
+- `src/app/user/` - User management
+- `src/app/shared/` - Shared components and services
+- `src/Services/` - Service layer for API communication
+- `src/environment/` - Environment configuration
+
+## Getting Started
+1. **Install dependencies:**
+   ```powershell
+   npm install
+   ```
+2. **Run the development server:**
+   ```powershell
+   ng serve
+   ```
+   The app will be available at `http://localhost:4200/`.
+
+## Build
+To build the project for production:
+```powershell
+ng build --prod
+```
+
+## Environment Configuration
+Edit `src/environment/environment.ts` for API endpoints and environment-specific settings.
+
+## Contributing
+Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
+
+## License
+This project is licensed under the MIT License.# GPONPRJ
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.0.5.
 
